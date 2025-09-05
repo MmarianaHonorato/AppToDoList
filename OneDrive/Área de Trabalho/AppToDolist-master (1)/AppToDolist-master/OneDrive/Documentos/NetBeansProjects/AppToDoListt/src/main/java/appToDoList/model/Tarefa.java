@@ -1,12 +1,34 @@
 
 package appToDoList.model;
 
+import java.time.LocalDateTime;
+
 
 public class Tarefa {
     private long id;
     private String titulo;
     private String descricao;
+    private LocalDateTime  dataHora;
+    private boolean  completo;
+    
+    //Costrutores
+    public Tarefa(){
+        this.dataHora=LocalDateTime.now();
+        this.completo=false;
+    }
+    
+    public Tarefa(String titulo){
+    this();    //chama o construtor padrão 
+    this.titulo=titulo;
+    }
+    
+    public Tarefa(String titulo,String descricao){
+    this(titulo);
+    this.descricao=descricao;
+    }
 
+    
+    //gets e sets METODOS
     public long getId() {
         return id;
     }
@@ -30,5 +52,24 @@ public class Tarefa {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
+    }
+
+    public boolean isComplemento() {
+        return completo;
+    }
+
+    public void setComplemento(boolean complemento) {
+        this.completo = complemento;
+    }
+    
+    
+    
     
 }
